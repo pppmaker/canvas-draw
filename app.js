@@ -5,6 +5,7 @@ const colorArray = new Array('#9CE673','#67F0ED','#7E6CD9','#F06C92','#EBB36A','
 const range = document.getElementById('points');
 const mode = document.getElementById('jsMode');
 const saveBtn = document.getElementById('jsSave');
+const rotateBtn = document.getElementById('jsRotate');
 
 const INITAIL_COLOR = '#000';
 const CANVAS_SIZE = 500;
@@ -97,6 +98,22 @@ function handleSaveClick(){
 }
 
 
+const degClassArray = new Array('deg-90','deg-180','deg-270');
+let canvasDegreeCounter = 0;
+function rotateCanvas(){
+    if(canvasDegreeCounter == 0){
+        canvas.classList.add(degClassArray[canvasDegreeCounter]);
+        canvasDegreeCounter++;
+    }else if(canvasDegreeCounter <= degClassArray.length-1){
+        canvas.classList.replace(degClassArray[canvasDegreeCounter-1],degClassArray[canvasDegreeCounter]);
+        canvasDegreeCounter++;
+    }else{
+        canvas.classList.remove(degClassArray[canvasDegreeCounter-1]);
+        canvasDegreeCounter = 0;
+    }
+}
+
+
 async function downloadCanvas(el) {
     const imageURI = canvas.toDataURL("image/jpg");
     el.href = imageURI;
@@ -114,3 +131,4 @@ canvas.addEventListener("mouseleave",stopPaint);
 canvas.addEventListener("click", handleCanvasClick);
 canvas.addEventListener("contextmenu", handleCM);
 range.addEventListener("change", changeLineWidth);
+rotateBtn.addEventListener("click",rotateCanvas)

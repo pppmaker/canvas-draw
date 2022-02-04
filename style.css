@@ -11,10 +11,24 @@ body{
 .canvas{
     width:500px;
     height:500px;
-    background-color: #FFF;
+    /* background-color: #FFF; */
     border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    /* box-shadow: 3px 3px 3px rgba(0,0,0,0.2); */
+    transform:rotate(0deg);
 }
+
+.canvas.deg-90{
+    transform:rotate(90deg);
+}
+
+.canvas.deg-180{
+    transform:rotate(180deg);
+}
+
+.canvas.deg-270{
+    transform:rotate(270deg);
+}
+
 
 .control_color{
     display: flex;
