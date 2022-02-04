@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <canvas id="canvas" class="canvas"></canvas>
+    <div class="control">
+
+        <label for="points">Points (between 2 and 10):</label><br>
+        <input type="range" id="points" name="points" min="2" max="10" step="2">
+
+        <div class="controls__btns">
+            <button id="jsMode">Fill</button>
+            <button id="jsSave">Save</button>
+            <button id="jsRotate">Rotate</button>
+        </div>
+
+        <div class="control_color" id="colorBar">
+            <!--<div class="color" style="background-color:#000"></div>-->
+        </div>
+
+        <!--<a download="mydrawing.jpg" href="" onclick="downloadCanvas(this);">Download example.jpg</a>-->
+    </div>
+
+    <script src="./app_me.js"></script>
+</body>
+</html>
